@@ -1,4 +1,6 @@
 
+# Rubik's-Cube-Solving-Robot
+
 # Abstract
 
    Rubik's Cube, a 3-D combination puzzle invented by Ernő Rubik in 1974, is the World’s top-selling puzzle game and best-selling toy. Rubik's Cube is surprisingly complex, there are 43,252,003,274,489,856,000 permutations of a standard 3×3×3 Rubik's Cube. Although humans are impossible to memorize all permutations of a Rubik’s Cube, humans can solve the puzzle as fast as 3.47 seconds. In recent years, a robot developed by MIT students can solve it in 0.38 seconds using an optimal algorithm.
