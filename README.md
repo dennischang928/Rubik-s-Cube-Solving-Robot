@@ -115,7 +115,7 @@ In order to control the whole robot, I decided to use Arduino nano to control th
 
 - Stepper motor Control
 
-Although stepper motors have a lot of advantages, unfortunately, controlling stepper motors often require sufficient and controlled energy for phases in a precise sequence, so a driver is often needed. Due to this, I plan to use 4 A4988 stepper motor drivers to control all of my stepper motors of the robot.
+Although stepper motors have a lot of advantages, controlling stepper motors often require sufficient and controlled energy for phases in a precise sequence, so a driver is often needed. Due to this, I plan to use 4 A4988 stepper motor drivers to control all of my stepper motors of the robot.
 
 Each A4988 motor driver required 2 control signal pins (step, direction) and 3 setup signal pins(MS1, MS2, MS3). The step and direction pins are used to control the movement of the stepper motors. The direction pin controls the rotate direction of the motor, and we can control the movement of a step of the motor by sending a pulse to the step pin. The MS1, MS2, MS3 pins are used to control the step of the stepper motor. By changing the input state of these pins to logic low or logic high, you can select one of the five steps resolution according to the table(Fig 2).
 
