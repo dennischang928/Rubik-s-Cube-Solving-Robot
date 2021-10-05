@@ -1,14 +1,10 @@
-# Paper
 
 # Abstract
 
----
+   Rubik's Cube, a 3-D combination puzzle invented by Ernő Rubik in 1974, is the World’s top-selling puzzle game and best-selling toy. Rubik's Cube is surprisingly complex, there are 43,252,003,274,489,856,000 permutations of a standard 3×3×3 Rubik's Cube. Although humans are impossible to memorize all permutations of a Rubik’s Cube, humans can solve the puzzle as fast as 3.47 seconds. In recent years, a robot developed by MIT students can solve it in 0.38 seconds using an optimal algorithm.
+   In this project, I developed a Rubik’s Cube-solving robot using a Computer Vision algorithm from scratch. The robot has 4 stepper motors and 4 servo motors as actuators. A camera is included to observe each color arrangement of the face of the Cube in a scrambled state sequentially. The image that the camera observed will be sent through a serial interface to the computer. I implement a solving algorithm that will take the Cube state as input and the sequence of moves that solve the Cube as an output. The sequence of moves is sent to the MCU and is then translated into a series of instructions. The stepper motors and the servo motors then work together to twist the Cube according to the instructions, fully solving the Cube.
 
-          Rubik's Cube, a 3-D combination puzzle invented by Ernő Rubik in 1974, is the World’s top-selling puzzle game and best-selling toy. Rubik's Cube is surprisingly complex, there are 43,252,003,274,489,856,000 permutations of a standard 3×3×3 Rubik's Cube. Although humans are impossible to memorize all permutations of a Rubik’s Cube, humans can solve the puzzle as fast as 3.47 seconds. In recent years, a robot developed by MIT students can solve it in 0.38 seconds using an optimal algorithm.
-
-           In this project, I developed a Rubik’s Cube-solving robot using a Computer Vision algorithm from scratch. The robot has 4 stepper motors and 4 servo motors as actuators. A camera is included to observe each color arrangement of the face of the Cube in a scrambled state sequentially. The image that the camera observed will be sent through a serial interface to the computer. I implement a solving algorithm that will take the Cube state as input and the sequence of moves that solve the Cube as an output. The sequence of moves is sent to the MCU and is then translated into a series of instructions. The stepper motors and the servo motors then work together to twist the Cube according to the instructions, fully solving the Cube.
-
-# Contents:
+# Contents
 
 - Abstract
 - Motivation
@@ -29,14 +25,10 @@
 
 # Motivation
 
----
-
-       In recent years, Computer Vision becomes more popular. Computer Vision has a lot of applications, such as object detection, event detection, video tracking, and color recognition. To familiarize myself in the field, I decide to develop a robot that solves a Rubik’s Cube using Computer Vision.
-        The goal is to fully solve a Rubik’s cube by twisting it using clamps attached to stepper and Servo motors. We will use a camera to capture each face of the cube. A computer will then be used, using the computer vision algorithm, to process these images and find out the color of the 9 stickers in each face. Once the color states of the cube are determined, the computer can then compute the sequence of moves that fully solve the cube.
+   In recent years, Computer Vision becomes more popular. Computer Vision has a lot of applications, such as object detection, event detection, video tracking, and color recognition. To familiarize myself in the field, I decide to develop a robot that solves a Rubik’s Cube using Computer Vision.
+   The goal is to fully solve a Rubik’s cube by twisting it using clamps attached to stepper and Servo motors. We will use a camera to capture each face of the cube. A computer will then be used, using the computer vision algorithm, to process these images and find out the color of the 9 stickers in each face. Once the color states of the cube are determined, the computer can then compute the sequence of moves that fully solve the cube.
 
 # Introduction
-
----
 
 I design the robot using Fusion 360 and Eagle. This robot consists of 4 stepper and Servo motors, 4 pairs of 3d-printed clamp and frame, a camera, and a PCB board with a microcontroller and 4 stepper motor drivers
 
@@ -51,8 +43,6 @@ The computer will then detect the position and orientation of each face from all
 Once the initial state of the Cube is found, the computer solves the Cube using Thistlethwaite's algorithm. The solution, the sequence of moves represented in Rubik's Cube Notation, will then be sent from the computer to the microcontroller. Afterwards, the microcontroller translates these notations into a series of stepper and Servo motors movements that twist the Cube and fully solving the Cube.
 
 # Materials
-
----
 
 - 4 stepper and Servo motors
 - 4 3d-printed clamps attached to the stepper motors
@@ -113,8 +103,6 @@ Trying to distinguish color from the image that the camera sends to the computer
 
 ### Electronics
 
----
-
 Instead of using a commercial CNC control board that can control stepper motors easily, I am going to design my robot controller PCB that can control 4 stepper motors and 4 Servo motors of my robot because most commercial CNC control boards can't control 2 or more Servo motors. Also, there is a lot of limitations of programming these commercial PCB board, so I decided to make my own control board.
 
 ![V1.jpg](README-Files/V1.jpg)
@@ -145,13 +133,11 @@ How pulses with different width control the Servo motor
 
 ## Programming
 
----
 
 ### Computer visions
 
-    In order to determine the color arrangement of each of the image that captured by the camera precisely, I implemented a method that can found out the difference of two colors.
-
-     A color model is a visualization that depicts the color spectrum as a multidimensional model. There are some commonly used color models in the world. Most modern color models have 3 dimensions (like RGB and HSV), while other models have more dimensions (like CMYK), and I am going to compare these different color models and found out which of them are more reliable in this project.
+   In order to determine the color arrangement of each of the image that captured by the camera precisely, I implemented a method that can found out the difference of two colors.
+   A color model is a visualization that depicts the color spectrum as a multidimensional model. There are some commonly used color models in the world. Most modern color models have 3 dimensions (like RGB and HSV), while other models have more dimensions (like CMYK), and I am going to compare these different color models and found out which of them are more reliable in this project.
 
 ---
 
@@ -303,8 +289,6 @@ The Computer aims to twist the Cube in U U2 D2:
 ![Diagram.svg](README-Files/Diagram.svg)
 
 # Challenges and Conclusion
-
----
 
 After assembled the Solver, there are some problems that I have experienced. When designing this robot, I aim to use a magnetic encoder to monitor the position of the Stepper motor. After I fully assembled the Solver, I try to read the value of the magnetic encoders by connecting them in parallel using I2C, but then I found that these magnetic encoders have the same I2C addresses, and I can't change the addresses. Therefore, the microcontroller can't read the values of them using I2C, so I have redesigned the robot, and I use a light sensor as the position monitoring sensor instead of a magnetic sensor.
 
