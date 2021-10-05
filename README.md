@@ -86,7 +86,7 @@ that has a disc with a hole and a light sensor
 
 Fig 1
 
-I found a problem when the clamp is twisting the cube. If one of the clamps rotates horizontal, the clamps on its left and right can't twist the cube because the clamp that is horizontal blocks their rotation. Tj is also a Servo motor that is responsible to separate the clamp from the cube so that all clamps can rotate [freely. As](http://freely.As) shown in the image on the left
+I found a problem when the clamp is twisting the cube. If one of the clamps rotates horizontal, the clamps on its left and right can't twist the cube because the clamp that is horizontal blocks their rotation. Tj is also a Servo motor that is responsible to separate the clamp from the cube so that all clamps can rotate freely. As shown in the image on the left
 
 In contrast to the stepper motor, Servo motor is a Closed Loop control system. When the Servo motor is moving, the position given by the potentiometer as feedback (Fig 1)
 is sent to the Servo motor control board to ensure it rotates to the expected position.
